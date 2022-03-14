@@ -32,3 +32,30 @@
 .no-data-msg {
   margin: 2rem;
 }
+
+#cardBody {
+  font-size: 1.25rem;
+  color: blue;
+  text-decoration: underline;
+}
+
+
+.card{
+  display: flex ;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#friends{
+  background-color: yellow;
+  color: black;
+}
+
+#play{
+  background: green;
+  color: white;
+}

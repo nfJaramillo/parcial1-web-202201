@@ -37,8 +37,19 @@ async function getUser(username) {
 }
 
 function printValues(data, username){
-  cardBody.textContent = username + " friends: " + Object.keys(data[0]['friends']).length + " Plays: " + Object.keys(data[1]['plays']).length 
-  
+  cardBody.textContent = username 
+  let friends = document.createElement('div');
+  friends.className = "btn btn-primary"
+  friends.id = "friends"
+  friends.textContent = " friends: " + Object.keys(data[0]['friends']).length
+  let play = document.createElement('div');
+  play.className = "btn btn-primary"
+  play.id = "play"
+  play.textContent =" Plays: " + Object.keys(data[1]['plays']).length 
+
+  cardBody.appendChild(friends)
+  cardBody.appendChild(play)
+
   let plays = [];
   data[1]['plays'].forEach((element) => {
       if (!plays.includes(element)) {
