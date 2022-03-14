@@ -39,7 +39,16 @@ async function getUser(username) {
 function printValues(data, username){
   cardBody.textContent = username + " friends: " + Object.keys(data[0]['friends']).length + " Plays: " + Object.keys(data[1]['plays']).length 
   
-  data[1]['plays'].forEach(play => {
+  let plays = [];
+  data[1]['plays'].forEach((element) => {
+      if (!plays.includes(element)) {
+        plays.push(element);
+      }
+  });
+  
+
+
+  plays.forEach(play => {
     let tr = document.createElement('tr');
     let td = document.createElement('td');
     td.innerText = play
